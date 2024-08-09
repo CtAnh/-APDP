@@ -1,0 +1,73 @@
+﻿@model User
+@{
+    string userName = ViewBag.UserName;
+    string userRole = ViewBag.Role;
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Welcome</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+        }
+
+        .card-container {
+            max-width: 800px;
+            margin: 100px auto;
+        }
+
+        .card {
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+            transition: 0.3s;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+            .card:hover {
+                box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+            }
+
+        .container {
+            padding: 2px 16px;
+        }
+
+        .animation {
+            width: 100%;
+            border-radius: 10px 10px 0 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container card-container">
+        <div class="card">
+            <img class="card-img-top animation" src="https://qnuni.fpt.edu.vn/Data/Sites/1/News/4422/2trucanh.jpg" alt="Card image">
+            <div class="container">
+                <h4 class="card-title">Welcome Back, @userName!</h4>
+                <p>Your Role: @userRole</p>
+                <p>
+                    Dear Students,
+
+                    Welcome to BTEC FPT Hanoi – a modern, dynamic, and challenging learning environment. First of all, congratulations on choosing a school with an international training program that equips you with advanced knowledge and skills, preparing you well for the future.
+
+                    At BTEC FPT Hanoi, we strive to create an innovative learning environment that promotes the comprehensive development of each student. You will study with experienced, dedicated, and professional lecturers. Our curriculum not only provides theoretical knowledge but also emphasizes practical skills, helping you develop critical thinking and problem-solving abilities.
+
+                    Additionally, you will have the opportunity to participate in many extracurricular activities, clubs, and real-world projects, allowing you to explore your passions, develop soft skills, and expand your network. These experiences will be memorable and valuable assets in your life and future career.
+
+                    Always maintain a spirit of learning, passion, and perseverance. Do not be afraid to face challenges, as they are opportunities for you to grow and advance. The school and teachers are always here, ready to support and accompany you on your journey to conquer knowledge and build a successful future.
+
+                    Wishing you a successful and joyful semester!
+
+                    Sincerely,
+
+                    BTEC FPT Hanoi
+                </p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

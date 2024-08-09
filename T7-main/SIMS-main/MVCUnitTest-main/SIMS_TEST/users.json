@@ -1,0 +1,110 @@
+[
+  {
+    "Id": 3,
+    "Name": "Nguy\u1EC5n H\u1EEFu L\u00E2m",
+    "DoB": "2004-08-13T13:29:00",
+    "Email": "lamad@gmail.com",
+    "Core": null,
+    "Status": "Pass",
+    "Class": null,
+    "Major": null,
+    "Password": "123",
+    "Role": "Admin"
+  },
+  {
+    "Id": 6,
+    "Name": "hung",
+    "DoB": "0001-01-01T00:00:00",
+    "Email": "hung@gmail.com",
+    "Core": null,
+    "Status": null,
+    "Class": null,
+    "Major": null,
+    "Password": "123456789",
+    "Role": "Student"
+  },
+  {
+    "Id": 7,
+    "Name": "hung1",
+    "DoB": "0001-01-01T00:00:00",
+    "Email": "gule@gmail.com",
+    "Core": null,
+    "Status": null,
+    "Class": null,
+    "Major": null,
+    "Password": "00000000",
+    "Role": "Student"
+  },
+  {
+    "Id": 8,
+    "Name": "Pham Ngoc Hung",
+    "DoB": "0001-01-01T00:00:00",
+    "Email": "hungad@gmail.com",
+    "Core": null,
+    "Status": null,
+    "Class": null,
+    "Major": null,
+    "Password": "123",
+    "Role": "Admin"
+  },
+  {
+    "Id": 9,
+    "Name": "huy",
+    "DoB": "1990-02-06T14:16:00",
+    "Email": "huy@gmail.com",
+    "Core": null,
+    "Status": null,
+    "Class": null,
+    "Major": "IT",
+    "Password": "123",
+    "Role": "Teacher"
+  },
+  {
+    "Id": 11,
+    "Name": "Trung",
+    "DoB": "0001-01-01T00:00:00",
+    "Email": "Trungdz@gmail.com",
+    "Core": null,
+    "Status": "Pass",
+    "Class": null,
+    "Major": "q\u01B0eqwe",
+    "Password": "111",
+    "Role": "Student"
+  },
+  {
+    "Id": 12,
+    "Name": "Canh",
+    "DoB": "2024-08-22T11:06:00",
+    "Email": "canh@gmail.com",
+    "Core": null,
+    "Status": "Pass",
+    "Class": null,
+    "Major": "IT",
+    "Password": "123",
+    "Role": "Student"
+  },
+  {
+    "Id": 13,
+    "Name": "Trung",
+    "DoB": "0001-01-01T00:00:00",
+    "Email": "Trungdz@gmail.com",
+    "Core": null,
+    "Status": null,
+    "Class": null,
+    "Major": "IT",
+    "Password": "23423",
+    "Role": "Teacher"
+  }
+  {
+    "Id": 14,
+    "Name": "Nguyen Tuan Canh",
+    "DoB": "0001-01-01T00:00:00",
+    "Email": "Canhad@gmail.com",
+    "Core": null,
+    "Status": null,
+    "Class": null,
+    "Major": null,
+    "Password": "123",
+    "Role": "Admin"
+  }
+]

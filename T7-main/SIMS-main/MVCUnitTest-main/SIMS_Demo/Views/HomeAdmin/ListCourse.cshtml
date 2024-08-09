@@ -1,0 +1,178 @@
+﻿@model IEnumerable<SIMS_Demo.Models.Course>
+@{
+    Layout = "Layout_Admin";
+}
+<style>
+    body {
+        background-color: #f9f9f9;
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+    }
+
+    .header-container {
+        background-color: white;
+        border-radius: 10px;
+        padding: 10px 20px;
+        margin: 10px 20px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        text-align: center;
+    }
+
+    h1 {
+        margin: 0;
+        font-size: 24px;
+        color: #ff6600; /* Màu cam cho tiêu đề */
+    }
+
+    .header-container p {
+        margin: 5px 0;
+        font-size: 14px;
+        color: #333;
+    }
+
+    .btn-container {
+        display: flex;
+        justify-content: flex-start; /* Căn trái nút */
+        margin: 15px 20px; /* Khoảng cách dưới của nút */
+    }
+
+    .search-container {
+        display: flex;
+        justify-content: flex-start; /* Căn trái thanh tìm kiếm */
+        margin: 15px 20px; /* Khoảng cách dưới của thanh tìm kiếm */
+    }
+
+    .btn {
+        background-color: #ff6600; /* Màu cam cho nút */
+        border: none;
+        color: white;
+        padding: 10px 20px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 14px;
+        margin: 4px 2px;
+        transition-duration: 0.4s;
+        cursor: pointer;
+        border-radius: 5px;
+    }
+
+        .btn:hover {
+            background-color: #ff8533; /* Màu cam nhạt hơn khi hover */
+            color: white;
+        }
+
+    .form-control {
+        width: 300px;
+        padding: 10px;
+        border: 1px solid #ff6600;
+        border-radius: 5px;
+    }
+
+    table {
+        width: 100%;
+        margin: 20px 0;
+        border-collapse: collapse;
+        background-color: white;
+    }
+
+    th, td {
+        text-align: left;
+        padding: 12px;
+        color: black; /* Màu đen cho chữ */
+    }
+
+    th {
+        background-color: #ff6600; /* Màu cam cho tiêu đề bảng */
+        color: white;
+    }
+
+        th span {
+            color: black; /* Màu đen cho tiêu đề */
+        }
+
+    tr:nth-child(even) {
+        background-color: #f2f2f2;
+    }
+
+    tr:hover {
+        background-color: #ffebcc; /* Màu cam nhạt cho hover */
+    }
+
+    a.btn-sm {
+        font-size: 12px;
+        padding: 6px 10px;
+        margin: 2px;
+    }
+</style>
+
+<div class="header-container">
+    <h1>Admin Dashboard</h1>
+    <p>Welcome Back, Admin</p>
+    <p>You are allowed to participate in student management such as: Add, Edit, Delete and Update Course Data</p>
+</div>
+
+<div class="search-container">
+    <input type="text" id="searchCourseInput" placeholder="Search Courses by Subject, Time, Slot, Room Number, or Teacher" class="form-control" onkeyup="searchTable('courseTable', 'searchCourseInput')" />
+</div>
+
+<div class="btn-container">
+    <!-- Nút thêm khóa học -->
+    <a class="btn btn-sm btn-success" href="@Url.Action("NewCourse", "HomeAdmin")">Add New Course</a>
+</div>
+
+<table class="table" id="courseTable">
+    <thead>
+        <tr>
+            <th><span>ID</span></th>
+            <th><span>Subject</span></th>
+            <th><span>Time</span></th>
+            <th><span>Slot</span></th>
+            <th><span>Room Number</span></th>
+            <th><span>Homeroom Teacher</span></th>
+            <th><span>Action</span></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Id</td>
+                <td>@item.Subject</td>
+                <td>@item.Time.ToShortTimeString() - @item.Time.ToShortDateString()</td>
+                <td>@item.Slot</td>
+                <td>@item.RoomNumber</td>
+                <td>@item.Teacher</td>
+                <td>
+                    <a class="btn btn-sm btn-primary" href="@Url.Action("EditCourse", "HomeAdmin", new { id = item.Id })">Edit</a>
+                    <a class="btn btn-sm btn-primary" href="@Url.Action("DeleteCourse", "HomeAdmin", new { id = item.Id })">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<script>
+    function searchTable(tableId, inputId) {
+        var input, filter, table, tr, td, i, j, txtValue;
+        input = document.getElementById(inputId);
+        filter = input.value.toLowerCase();
+        table = document.getElementById(tableId);
+        tr = table.getElementsByTagName("tr");
+
+        for (i = 1; i < tr.length; i++) {
+            tr[i].style.display = "none";
+            td = tr[i].getElementsByTagName("td");
+            for (j = 0; j < td.length; j++) {
+                if (td[j]) {
+                    txtValue = td[j].textContent || td[j].innerText;
+                    if (txtValue.toLowerCase().indexOf(filter) > -1) {
+                        tr[i].style.display = "";
+                        break;
+                    }
+                }
+            }
+        }
+    }
+</script>
